@@ -2,7 +2,9 @@ var express=require('express');
 var app=express();
 var mongoose=require('mongoose');
     methodOverride=require('method-override');
-mongoose.connect("mongodb+srv://Naman:n30998r91275@cluster0-6tugk.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost:27017/yelp_camp_v9",{useNewUrlParser: true});
+// mongoose.connect("mongodb+srv://Naman:n30998r91275@cluster0-6tugk.mongodb.net/test?retryWrites=true&w=majority");
 var passport=require('passport'),
 	localStrategy=require('passport-local'),
 	passportLocalMongoose=require('passport-local-mongoose');
